@@ -2,8 +2,13 @@
 resource "azurerm_resource_group" "training" {
   name     = "${var.env}-${var.client}-training-india"
   location = var.location
-  
 }
+
+resource "azurerm_resource_group" "testingrg1" {
+  name     = "${var.env}-${var.client}-testingrg1"
+  location = var.location
+}
+
 
 resource "azurerm_storage_account" "trainingstorage" {
   name                     = var.storagename
@@ -101,10 +106,6 @@ resource "random_string" "zomatovm1password" {
   override_special = "@%!-"
   min_lower        = 4
 }
-
-
-//this is a test comment
-//asdf
 
 
 
